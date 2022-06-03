@@ -1,0 +1,34 @@
+alert('Bienvenido a la calculadora de divisas (valor Blue) de dolares, euros, libras, yuanes y yenes');
+
+class calculadoraDivisas {
+    constructor (monto, divisa) {
+        this.monto = monto
+        this.divisa = divisa
+    }
+
+    multiplicar(a, b) {
+        return (Math.abs(a * b)).toFixed(2)
+    }
+}
+
+const divisa1 = new calculadoraDivisas((Number(prompt('Ingrese el monto a calcular en Pesos Argentinos.'))),prompt('Ingrese la divisa a la que quiere convertir sus pesos.'))
+
+switch(divisa1.divisa){
+    case 'dolar' | 'dolares' | 'usd':
+        alert('Valor en ' + divisa1.divisa + ': $' + divisa1.multiplicar(divisa1.monto, 0.0048))
+    break
+    case 'euro' | 'euros' | 'eur':
+        alert('Valor en ' + divisa1.divisa + ': $' + divisa1.multiplicar(divisa1.monto * 0.0043))
+    break
+    case 'libra' | 'libras' | 'libra esterlina' | 'libras esterlinas' | 'gbp':
+        alert('Valor en ' + divisa1.divisa + ': $' + divisa1.multiplicar(divisa1.monto * 0.0040))
+    break
+    case 'yuan' | 'yuanes' | 'cny':
+        alert('Valor en ' + divisa1.divisa + ': $' + divisa1.multiplicar(divisa1.monto * 0.032))
+    break
+    case 'yen' | 'yenes' | 'jpy':
+        alert('Valor en ' + divisa1.divisa + ': $' + divisa1.multiplicar(divisa1.monto * 0.0061))
+    break
+    default:
+        alert('Divisa no aceptada.')
+}
