@@ -11,6 +11,7 @@ class calculadoraDivisas {
 }
 
 const divisa1 = new calculadoraDivisas((Number(prompt('Ingrese el monto a calcular en Pesos Argentinos.'))),prompt('Ingrese la divisa a la que quiere convertir sus pesos.'))
+console.log(divisa1)
 
 switch(divisa1.divisa){
     case 'dolar':
