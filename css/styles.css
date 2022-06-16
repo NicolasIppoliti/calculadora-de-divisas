@@ -157,6 +157,11 @@ select:focus, input:focus, button:focus {
 #texto-footer.activo {
   color: #dedede; }
 
+.container {
+  text-align: center;
+  align-items: center;
+  justify-content: center; }
+
 @media (max-width: 600px) {
   .divisa input {
     width: 200px; } }
