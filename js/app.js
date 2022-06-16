@@ -71,14 +71,16 @@ const footer = document.getElementById('texto-footer');
 const p = document.querySelector('p');
 const body = document.querySelector('body');
 const toggle = document.getElementById('toggle');
+const divisa1 = document.getElementById('divisa-uno');
+const divisa2 = document.getElementById('divisa-dos');
 
 //Funcion para cambiar de Tema Claro a Tema Oscuro la pagina
 toggle.onclick = function(){
     toggle.classList.toggle('activo');
     body.classList.toggle('activo');
     p.classList.toggle('activo');
-    divisaElem1.classList.toggle('activo');
-    divisaElem2.classList.toggle('activo');
+    divisa1.classList.toggle('activo');
+    divisa2.classList.toggle('activo');
     footer.classList.toggle('activo');
 }
 
