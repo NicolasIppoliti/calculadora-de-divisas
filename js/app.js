@@ -18,28 +18,30 @@ const p = document.querySelector('p');
 const body = document.querySelector('body');
 const toggle = document.getElementById('toggle');
 
+//Fetch a un .JSON para mostrar la primera lista de divisas
 document.addEventListener('DOMContentLoaded', () => {
     fetch('../currencies1.json').then(res => {
         return res.json();
     }).then(data => {
         let salidaDivisa = '';
         data.forEach(country => {
-            console.log(country)
-            salidaDivisa += `<option>${country.divisa}</option>`;
+            // console.log(country)
+            salidaDivisa += `<option>${country.divisa} - ${country.nombreES}</option>`;
         })
 
         divisaElem1.innerHTML = salidaDivisa;
     })
 })
 
+//Fetch a un .JSON para mostrar la segunda lista de divisas
 document.addEventListener('DOMContentLoaded', () => {
     fetch('../currencies2.json').then(res => {
         return res.json();
     }).then(data => {
         let salidaDivisa = '';
         data.forEach(country => {
-            console.log(country)
-            salidaDivisa += `<option>${country.divisa}</option>`;
+            // console.log(country)
+            salidaDivisa += `<option>${country.divisa} - ${country.nombreES}</option>`;
         })
 
         divisaElem2.innerHTML = salidaDivisa;
@@ -59,8 +61,8 @@ toggle.onclick = function(){
 //Funcion para convertir
 function calcular(){
     //Obtengo los valores de cada divisa
-    const divisa1Monto = divisaElem1.value;
-    const divisa2Monto = divisaElem2.value;
+    const divisa1Monto = divisaElem1.value.slice(0,3);
+    const divisa2Monto = divisaElem2.value.slice(0,3);
 
     //Fetch de la divisa seleccionada
     fetch(`https://open.er-api.com/v6/latest/${divisa1Monto}`)
