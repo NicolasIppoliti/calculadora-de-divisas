@@ -7,6 +7,7 @@
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel='stylesheet' href='./css/bootstrap.min.css'>
     <link rel='stylesheet' href='./css/styles.css'>
     <title>Conversor de Divisas NMI</title>
@@ -34,7 +35,6 @@
                     </button>
                     <div class='tasas' id='tasas'>--</div>
                 </div>
-
                 <div class='divisa'>
                     <select title="divisa2" id='divisa-dos'></select>
                     <input type='number' id='monto-dos' placeholder='0' />
@@ -45,8 +45,10 @@
             <div id= 'texto-footer' class='text-center p-3'>
                 © 2022 Copyright:
                 <a href='./index.html'>Conversor de Divisas</a>
+                <p id="contador-visitas"></p>
             </div>
         </footer>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>

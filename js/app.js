@@ -12,6 +12,9 @@ const montoElem2 = document.getElementById('monto-dos');
 const tasasElem = document.getElementById('tasas');
 const swap = document.getElementById('swap');
 
+//Contador visitas
+const contador = document.getElementById('contador-visitas');
+
 //Toggle de tema claro a tema oscuro
 const footer = document.getElementById('texto-footer');
 const p = document.querySelector('p');
@@ -82,14 +85,40 @@ divisaElem2.addEventListener('change', calcular);
 montoElem1.addEventListener('input', calcular);
 montoElem2.addEventListener('input', calcular);
 
+//Funcion Toastify
+const toastAgregado = () => {
+    Toastify({
+        text: `Cambio de ${divisaElem2.value.slice(0,3)} a ${divisaElem1.value.slice(0,3)} realizado con exito.`,
+        duration: 1500,
+        gravity: "top",
+        position: "right",
+        style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+    }).showToast();
+}
+
 //Funcion para cambiar las divisas de lugar
 swap.addEventListener('click', () => {
     const temp = divisaElem1.value;
     divisaElem1.value = divisaElem2.value;
     divisaElem2.value = temp;
 
+    toastAgregado();
+
     calcular();
 });
 
-//Calcula al recargar la pagina
+//Funcion para contar la cantidad de veces que se visito la pagina
+function cantVisitas() {
+    let cargado = parseInt(localStorage.getItem('cargado'), 10),
+        cargado_num = cargado?cargado+1:1;
+    localStorage.setItem('cargado', cargado_num);
+
+    contador.innerText = ('¡Has visitado esta pagina '+cargado_num+' veces!');
+};
+
+cantVisitas();
+
+//Calcula al iniciar la pagina
 calcular();

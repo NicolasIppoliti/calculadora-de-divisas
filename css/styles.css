@@ -99,7 +99,8 @@ p.activo {
   font-size: 15px;
   padding: 8px 12px; }
 
-.btn:hover {
+.btn:enabled {
+  color: #fff;
   background: #5fbaa7; }
 
 .divisa {
@@ -124,11 +125,11 @@ p.activo {
   color: #fff; }
 
 #divisa-uno {
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px; }
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px; }
 
 #divisa-uno.activo {
   background: #00000071;
@@ -136,11 +137,11 @@ p.activo {
   color: #dedede; }
 
 #divisa-dos {
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px; }
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px; }
 
 #divisa-dos.activo {
   background: #00000071;
