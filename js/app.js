@@ -2,11 +2,15 @@
 
 //Divisas y montos
 const divisaElem1 = document.getElementById('divisa-uno');
-const nombreElem1 = document.getElementById('nombre-divisa-uno')
 const montoElem1 = document.getElementById('monto-uno');
 const divisaElem2 = document.getElementById('divisa-dos');
-const nombreElem2 = document.getElementById('nombre-divisa-dos')
 const montoElem2 = document.getElementById('monto-dos');
+const dolaroficial = document.getElementById('dolaroficial');
+const dolarblue = document.getElementById('dolarblue');
+const contadoliqui = document.getElementById('contadoliqui');
+const dolarpromedio = document.getElementById('dolarpromedio');
+const dolarturista = document.getElementById('dolarturista');
+const dolarbolsa = document.getElementById('dolarbolsa');
 
 //Tasas de cambio y swap
 const tasasElem = document.getElementById('tasas');
@@ -20,6 +24,18 @@ const footer = document.getElementById('texto-footer');
 const p = document.querySelector('p');
 const body = document.querySelector('body');
 const toggle = document.getElementById('toggle');
+const h51 = document.getElementById('h51');
+const h52 = document.getElementById('h52');
+const h53 = document.getElementById('h53');
+const h54 = document.getElementById('h54');
+const h55 = document.getElementById('h55');
+const h56 = document.getElementById('h56');
+const div1 = document.getElementById('div1');
+const div2 = document.getElementById('div2');
+const div3 = document.getElementById('div3');
+const div4 = document.getElementById('div4');
+const div5 = document.getElementById('div5');
+const div6 = document.getElementById('div6');
 
 //Fetch a un .JSON para mostrar la primera lista de divisas
 document.addEventListener('DOMContentLoaded', () => {
@@ -59,6 +75,24 @@ toggle.onclick = function(){
     divisaElem1.classList.toggle('activo');
     divisaElem2.classList.toggle('activo');
     footer.classList.toggle('activo');
+    dolaroficial.classList.toggle('activo');
+    dolarblue.classList.toggle('activo');
+    contadoliqui.classList.toggle('activo');
+    dolarbolsa.classList.toggle('activo');
+    dolarturista.classList.toggle('activo');
+    dolarpromedio.classList.toggle('activo');
+    h51.classList.toggle('activo');
+    h52.classList.toggle('activo');
+    h53.classList.toggle('activo');
+    h54.classList.toggle('activo');
+    h55.classList.toggle('activo');
+    h56.classList.toggle('activo');
+    div1.classList.toggle('activo');
+    div2.classList.toggle('activo');
+    div3.classList.toggle('activo');
+    div4.classList.toggle('activo');
+    div5.classList.toggle('activo');
+    div6.classList.toggle('activo');    
 }
 
 //Funcion para convertir
@@ -77,6 +111,80 @@ function calcular(){
         montoElem2.value = (montoElem1.value * tasas).toFixed(2);
     })
 }
+
+//Fetch Dolares Argentina
+//Dolar Oficial
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('https://api-dolar-argentina.herokuapp.com/api/dolaroficial').then(res => {
+        return res.json();
+    }).then(data => {
+        let salidaDivisa = '';
+        salidaDivisa += 
+        `Compra: ${data.compra}
+        Venta: ${data.venta}`
+        dolaroficial.innerText = salidaDivisa;
+    })
+})
+//Dolar Blue
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('https://api-dolar-argentina.herokuapp.com/api/dolarblue').then(res => {
+        return res.json();
+    }).then(data => {
+        let salidaDivisa = '';
+        salidaDivisa += 
+        `Compra: ${data.compra}
+        Venta: ${data.venta}`
+        dolarblue.innerText = salidaDivisa;
+    })
+})
+//Dolar Contado con Liqui
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('https://api-dolar-argentina.herokuapp.com/api/contadoliqui').then(res => {
+        return res.json();
+    }).then(data => {
+        let salidaDivisa = '';
+        salidaDivisa += 
+        `Compra: ${data.compra}
+        Venta: ${data.venta}`
+        contadoliqui.innerText = salidaDivisa;
+    })
+})
+//Dolar Promedio
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('https://api-dolar-argentina.herokuapp.com/api/dolarpromedio').then(res => {
+        return res.json();
+    }).then(data => {
+        let salidaDivisa = '';
+        salidaDivisa += 
+        `Compra: ${data.compra}
+        Venta: ${data.venta}`
+        dolarpromedio.innerText = salidaDivisa;
+    })
+})
+//Dolar Turista
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('https://api-dolar-argentina.herokuapp.com/api/dolarturista').then(res => {
+        return res.json();
+    }).then(data => {
+        let salidaDivisa = '';
+        salidaDivisa += 
+        `Compra: ${data.compra}
+        Venta: ${data.venta}`
+        dolarturista.innerText = salidaDivisa;
+    })
+})
+//Dolar Bolsa
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('https://api-dolar-argentina.herokuapp.com/api/dolarbolsa').then(res => {
+        return res.json();
+    }).then(data => {
+        let salidaDivisa = '';
+        salidaDivisa += 
+        `Compra: ${data.compra}
+        Venta: ${data.venta}`
+        dolarbolsa.innerText = salidaDivisa;
+    })
+})
 
 //Event Listeners
 divisaElem1.addEventListener('change', calcular);
