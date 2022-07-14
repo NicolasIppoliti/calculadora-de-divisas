@@ -112,6 +112,9 @@ function calcular(){
     })
 }
 
+//Solucion problema CORS Policy
+
+
 //Fetch Dolares Argentina
 //Dolar Oficial
 document.addEventListener('DOMContentLoaded', () => {
