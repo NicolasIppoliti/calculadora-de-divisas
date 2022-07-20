@@ -102,7 +102,7 @@ function calcular(){
     const divisa2Monto = divisaElem2.value.slice(0,3);
 
     //Fetch de la divisa seleccionada
-    fetch(`https://open.er-api.com/v6/latest/${divisa1Monto}`)
+    fetch(`https://cors-solucion.herokuapp.com/https://open.er-api.com/v6/latest/${divisa1Monto}`)
     .then((res) => res.json())
     .then((data) => {
         console.log(data);
@@ -118,7 +118,7 @@ function calcular(){
 //Fetch Dolares Argentina
 //Dolar Oficial
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://api-dolar-argentina.herokuapp.com/api/dolaroficial').then(res => {
+    fetch('https://cors-solucion.herokuapp.com/https://api-dolar-argentina.herokuapp.com/api/dolaroficial').then(res => {
         return res.json();
     }).then(data => {
         let salidaDivisa = '';
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 //Dolar Blue
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://api-dolar-argentina.herokuapp.com/api/dolarblue').then(res => {
+    fetch('https://cors-solucion.herokuapp.com/https://api-dolar-argentina.herokuapp.com/api/dolarblue').then(res => {
         return res.json();
     }).then(data => {
         let salidaDivisa = '';
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 //Dolar Contado con Liqui
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://api-dolar-argentina.herokuapp.com/api/contadoliqui').then(res => {
+    fetch('https://cors-solucion.herokuapp.com/https://api-dolar-argentina.herokuapp.com/api/contadoliqui').then(res => {
         return res.json();
     }).then(data => {
         let salidaDivisa = '';
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 //Dolar Promedio
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://api-dolar-argentina.herokuapp.com/api/dolarpromedio').then(res => {
+    fetch('https://cors-solucion.herokuapp.com/https://api-dolar-argentina.herokuapp.com/api/dolarpromedio').then(res => {
         return res.json();
     }).then(data => {
         let salidaDivisa = '';
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 //Dolar Turista
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://api-dolar-argentina.herokuapp.com/api/dolarturista').then(res => {
+    fetch('https://cors-solucion.herokuapp.com/https://api-dolar-argentina.herokuapp.com/api/dolarturista').then(res => {
         return res.json();
     }).then(data => {
         let salidaDivisa = '';
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 //Dolar Bolsa
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://api-dolar-argentina.herokuapp.com/api/dolarbolsa').then(res => {
+    fetch('https://cors-solucion.herokuapp.com/https://api-dolar-argentina.herokuapp.com/api/dolarbolsa').then(res => {
         return res.json();
     }).then(data => {
         let salidaDivisa = '';
